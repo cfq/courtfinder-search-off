@@ -27,3 +27,22 @@ header {
         font-size: 1.2em;
     }
 }
+
+#results {
+    ul  {
+        list-style: none;
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    li {
+        border-left: 3px solid #74b73f;
+        background: #F0F0F0;
+        padding: 1em;
+        margin: 2em 0;
+    }
+
+    ul p span {
+        display: block;
+    }
+}

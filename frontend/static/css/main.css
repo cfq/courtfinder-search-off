@@ -6,7 +6,7 @@ header, main {
   margin: auto; }
 
 header h1 {
-  font: 1.8em/2em "Noto Serif", serif;
+  font: 1.8em/2em 'Noto Serif', serif;
   text-align: center;
   box-shadow: 0 6px 8px -6px rgba(0, 0, 0, 0.3); }
 
@@ -19,3 +19,15 @@ header h1 {
     padding: 0.5em;
     font-family: "Lucida Grande", sans-serif;
     font-size: 1.2em; }
+
+#results ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0; }
+#results li {
+  border-left: 3px solid #74b73f;
+  background: #F0F0F0;
+  padding: 1em;
+  margin: 2em 0; }
+#results ul p span {
+  display: block; }

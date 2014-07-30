@@ -21,12 +21,20 @@
         {% endif %}
 
         {% if results %}
-        <section>
+        <section id="results">
             <ul>
-                {% for res in results %}
-                    {% set r = res['_source'] %}
-                    <li>{{ r.name }}</li>
-                {% endfor %}
+            {% for res in results %}
+            {% set r = res['_source'] %}
+                <li>
+                    <h2>{{ r.name }}</h2>
+
+                    <p>
+                        <span>{{ r.address.streetAddress.replace(',', "\n") }}</span>
+                        <span>{{ r.address.town }}</span>
+                        <span>{{ r.address.postcode }}</span>
+                    </p>
+                </li>
+            {% endfor %}
             </ul>
         </section>
         {% endif %}
