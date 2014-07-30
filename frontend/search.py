@@ -8,7 +8,10 @@ def search_keyword( keyword ):
     try:
         r = es.search("courtfinder", body={
             "query": {
-                "match_all": {}
+                "fuzzy_like_this" : {
+                    "fields" : ["streetAddress", "name" , "town"],
+                    "like_text" : keyword
+                }
             }
         })
 
