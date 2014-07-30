@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Elasticsearch Test</title>
+    <title>Elasticsearch Test</title>
+    <link href='http://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
 </head>
 <body>
-  <ul>
-    {% for res in results %}
-    <li>{{ res }}</li>
-    {% endfor %}
-  </ul>
+    <header>
+        <h1>Court Finder Search</h1>
+    </header>
+    <main>
+        <form method="get" action="/search">
+            <p id="searchbox">
+                <input name="query" type="text" value="" />
+            </p>
+        </form>
 
+        {% if query %}
+            <p>Resulst for <strong>{{ query }}</strong>:
+        {% endif %}
+
+        {% if results %}
+        <section>
+            <ul>
+                {% for res in results %}
+                    {% set r = res['_source'] %}
+                    <li>{{ r.name }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+    </main>
 </body>
 </html>
